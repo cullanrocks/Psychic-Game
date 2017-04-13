@@ -6,20 +6,18 @@
     var userInputs = [];
     var ran = parseInt(Math.random() * 100) % 26;
     var randomLetter = choices[ran];
-    var keysPressed;
+    var keysPressed; 
     var divvy;
 
-    console.log(ran)
+   
    
     document.onkeyup = function(event) {
         keysPressed = event.key;
         userInputs.push(keysPressed);
-         console.log(randomLetter)
-
+         
         if (userInputs.indexOf(randomLetter) === -1) {
             maxGuesses--;
            
-            console.log(maxGuesses);
         }   
         else if (userInputs.indexOf(randomLetter) > -1) {
             maxGuesses--;
@@ -30,8 +28,8 @@
                 userInputs = [];
                 ran = parseInt(Math.random() * 100) % 26;
                 randomLetter = choices[ran];
-               
             }
+            
         if (maxGuesses === 0) {
             losses++;
             maxGuesses = 8;
